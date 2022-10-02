@@ -42,7 +42,6 @@ def automated_compression(oto_graph, model, dummy_input, compressed_model_path, 
     onnx_graph = onnx_model.graph
     
     oto_graph.set_zero_groups()
-    oto_graph.conv_bn_fuse()
     assign_onnx_tensors_on_oto(oto_graph, onnx_graph)
 
     for param in oto_graph.params_onnx:
